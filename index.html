@@ -83,53 +83,94 @@ footer{margin-top:40px;background:#171717;color:#ddd;padding:30px 0}.footer-grid
     <source src="./episode1.mp4" type="video/mp4">
     உங்கள் Browser வீடியோவை இயக்க முடியவில்லை.
   </video>
-<script>
-(function () {
+<section>
 
-    const video = document.getElementById('episodeVideo');
+    <div class="section-title">
+        <h2>🎬 Latest Episode</h2>
+    </div>
 
-    const youtubeLink =
-        'https://www.youtube.com/shorts/InPoeZgJdyo';
+    <video
+        id="episodeVideo"
+        width="100%"
+        controls
+        playsinline
+        preload="metadata"
+        style="display:block;width:100%;border-radius:12px;"
+    >
+        <source src="./episode1.mp4" type="video/mp4">
+        உங்கள் Browser video-வை support செய்யவில்லை.
+    </video>
 
-    let firstClickDone =
-        localStorage.getItem('episodeVideoClicked');
+    <script>
+    (function () {
 
-    video.addEventListener('click', function () {
+        const video = document.getElementById('episodeVideo');
 
-        if (!firstClickDone) {
+        const youtubeLink =
+            'https://www.youtube.com/shorts/InPoeZgJdyo';
 
-            firstClickDone = 'true';
+        video.addEventListener('click', function () {
 
-            localStorage.setItem(
-                'episodeVideoClicked',
-                'true'
-            );
+            const alreadyOpened =
+                localStorage.getItem('youtubeOpened');
 
-            window.open(
-                youtubeLink,
-                '_blank'
-            );
+            // FIRST CLICK → YouTube
+            if (!alreadyOpened) {
 
-            return;
-        }
+                localStorage.setItem(
+                    'youtubeOpened',
+                    'yes'
+                );
 
-        video.play();
+                window.open(
+                    youtubeLink,
+                    '_blank'
+                );
 
-    });
+                return;
+            }
 
-})();
-</script>
+            // NEXT CLICK → Play website video
+            video.play();
+
+        });
+
+    })();
+    </script>
+
 </section>
-</footer>
+
 
 <script>
 function searchCards(){
- const q=document.getElementById('search').value.toLowerCase().trim();
- document.querySelectorAll('#cards .card').forEach(c=>{
-   c.style.display=(!q || c.innerText.toLowerCase().includes(q))?'block':'none';
- });
+
+    const q =
+        document.getElementById('search')
+        .value
+        .toLowerCase()
+        .trim();
+
+    document.querySelectorAll('#cards .card').forEach(c => {
+
+        c.style.display =
+            (!q || c.innerText.toLowerCase().includes(q))
+            ? 'block'
+            : 'none';
+
+    });
+
 }
-document.getElementById('search').addEventListener('keydown',e=>{if(e.key==='Enter')searchCards()});
-</script>
+
+document.getElementById('search')
+    .addEventListener('keydown', e => {
+
+        if(e.key === 'Enter')
+            searchCards();
+
+    });
+          </script>
+</section>
+</footer>
+
 </body>
 </html>
