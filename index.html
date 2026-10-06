@@ -83,21 +83,40 @@ footer{margin-top:40px;background:#171717;color:#ddd;padding:30px 0}.footer-grid
     <source src="./episode1.mp4" type="video/mp4">
     உங்கள் Browser வீடியோவை இயக்க முடியவில்லை.
   </video>
-
 <script>
 (function () {
-  const video = document.getElementById('episodeVideo');
-  let firstClick = true;
 
-  video.addEventListener('click', function () {
-    if (firstClick) {
-      firstClick = false;
-      window.open(
-        'https://www.youtube.com/shorts/InP0eZgJdyo',
-        '_blank'
-      );
-    }
-  });
+    const video = document.getElementById('episodeVideo');
+
+    const youtubeLink =
+        'https://www.youtube.com/shorts/InPoeZgJdyo';
+
+    let firstClickDone =
+        localStorage.getItem('episodeVideoClicked');
+
+    video.addEventListener('click', function () {
+
+        if (!firstClickDone) {
+
+            firstClickDone = 'true';
+
+            localStorage.setItem(
+                'episodeVideoClicked',
+                'true'
+            );
+
+            window.open(
+                youtubeLink,
+                '_blank'
+            );
+
+            return;
+        }
+
+        video.play();
+
+    });
+
 })();
 </script>
 </section>
