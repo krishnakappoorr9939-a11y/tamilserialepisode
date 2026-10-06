@@ -84,15 +84,38 @@ footer{margin-top:40px;background:#171717;color:#ddd;padding:30px 0}.footer-grid
     உங்கள் Browser வீடியோவை இயக்க முடியவில்லை.
   </video>
 
-  <a
-    href="https://www.youtube.com/shorts/InP0eZgJdyo"
-    target="_blank"
-    rel="noopener noreferrer"
-    style="display:block;text-align:center;padding:12px;
-    margin-top:10px;background:#ff0000;color:white;
-    border-radius:8px;text-decoration:none;">
-    ▶ YouTube-ல் திறக்கவும்
-  </a>
+<section>
+  <div class="section-title">
+    <h2>🎬 Latest Episode</h2>
+  </div>
+
+  <video
+    id="episodeVideo"
+    width="100%"
+    controls
+    playsinline
+    preload="metadata"
+    style="display:block;width:100%;border-radius:12px;">
+    <source src="./episode1.mp4" type="video/mp4">
+  </video>
+</section>
+
+<script>
+(function () {
+  const video = document.getElementById('episodeVideo');
+  let firstClick = true;
+
+  video.addEventListener('click', function () {
+    if (firstClick) {
+      firstClick = false;
+      window.open(
+        'https://www.youtube.com/shorts/InP0eZgJdyo',
+        '_blank'
+      );
+    }
+  });
+})();
+</script>
 </section>
 </footer>
 
