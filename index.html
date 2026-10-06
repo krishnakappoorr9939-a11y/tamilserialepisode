@@ -100,17 +100,22 @@ footer{margin-top:40px;background:#171717;color:#ddd;padding:30px 0}.footer-grid
   });
 })();
 </script>
-</section>
-</footer>
-
+```html
 <script>
-function searchCards(){
- const q=document.getElementById('search').value.toLowerCase().trim();
- document.querySelectorAll('#cards .card').forEach(c=>{
-   c.style.display=(!q || c.innerText.toLowerCase().includes(q))?'block':'none';
- });
-}
-document.getElementById('search').addEventListener('keydown',e=>{if(e.key==='Enter')searchCards()});
+(function () {
+  const video = document.getElementById('episodeVideo');
+  let youtubeOpened = false;
+
+  if (!video) return;
+
+  video.addEventListener('click', function () {
+    if (!youtubeOpened) {
+      youtubeOpened = true;
+      window.open(
+        'https://www.youtube.com/shorts/InP0eZgJdyo',
+        '_blank'
+      );
+    }
+  });
+})();
 </script>
-</body>
-</html>
