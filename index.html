@@ -68,7 +68,11 @@ footer{margin-top:40px;background:#171717;color:#ddd;padding:30px 0}.footer-grid
 </div>
 </section>
 
-<div>
+<section>
+  <div class="section-title">
+    <h2>🎬 Latest Episode</h2>
+  </div>
+
   <video
     id="episodeVideo"
     width="100%"
@@ -76,42 +80,20 @@ footer{margin-top:40px;background:#171717;color:#ddd;padding:30px 0}.footer-grid
     playsinline
     preload="metadata"
     style="display:block;width:100%;border-radius:12px;">
-    <source src="episode1.mp4" type="video/mp4">
+    <source src="./episode1.mp4" type="video/mp4">
+    உங்கள் Browser வீடியோவை இயக்க முடியவில்லை.
   </video>
-</div>
 
-<script>
-(function () {
-  const video = document.getElementById('episodeVideo');
-  let youtubeOpened = false;
-
-  video.addEventListener('click', function () {
-    if (!youtubeOpened) {
-      youtubeOpened = true;
-      window.open(
-        'https://www.youtube.com/shorts/InP0eZgJdyo',
-        '_blank'
-      );
-    }
-  });
-})();
-</script>
-<section id="reviews">
-<div class="section-title"><h2>📝 Latest Reviews</h2><span>View All →</span></div>
-<div class="grid">
-<article class="card"><div class="thumb">REVIEW</div><div class="card-body"><h3>Today Episode Review</h3><p>Episode-ன் முக்கியமான பகுதிகளை சுருக்கமாக பார்க்கலாம்.</p></div></article>
-<article class="card"><div class="thumb">UPDATE</div><div class="card-body"><h3>Serial Story Update</h3><p>கதையில் ஏற்பட்ட புதிய மாற்றங்கள் மற்றும் highlights.</p></div></article>
-<article class="card"><div class="thumb">NEWS</div><div class="card-body"><h3>Serial Latest News</h3><p>தமிழ் சீரியல்களின் latest entertainment updates.</p></div></article>
-</div>
+  <a
+    href="https://www.youtube.com/shorts/InP0eZgJdyo"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="display:block;text-align:center;padding:12px;
+    margin-top:10px;background:#ff0000;color:white;
+    border-radius:8px;text-decoration:none;">
+    ▶ YouTube-ல் திறக்கவும்
+  </a>
 </section>
-</main>
-
-<footer>
-<div class="wrap footer-grid">
-<div><div class="footer-title">Tamil Serial Episode</div><div>Latest Tamil serial updates, episode news and reviews.</div></div>
-<div><div class="footer-title">Important</div><a href="#">About Us</a><a href="#">Contact</a><a href="#">Privacy Policy</a></div>
-<div><div class="footer-title">Legal</div><a href="#">Disclaimer</a><a href="#">Terms & Conditions</a></div>
-</div>
 </footer>
 
 <script>
